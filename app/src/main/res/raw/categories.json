@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Cats",
+    "imageUrl": "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Dogs",
+    "imageUrl": "http://www.mystudycorner.net/wp-content/uploads/2015/05/dog5.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Sreet art",
+    "imageUrl": "http://static3.businessinsider.com/image/56f020c09105842b008b7af5-1200/3dasicfernandezrubin415greenpoint-street-art-yoav-litvin.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Donald Trump",
+    "imageUrl": "http://c10.nrostatic.com/sites/default/files/styles/original_image_with_cropping/public/uploaded/donald-trump-grow-up.jpg?itok=n1PW3Myr"
+  },
+  {
+    "id": "5",
+    "name": "Kurzgesag",
+    "imageUrl": "http://kurzgesagt.org/wp-content/uploads/2016/06/Merch_Kurzgesagt-Sticker-1-.png"
+  },
+  {
+    "id": "6",
+    "name": "Cars",
+    "imageUrl": "http://media.caranddriver.com/images/media/51/25-cars-worth-waiting-for-lp-ford-gt-photo-658253-s-original.jpg"
+  }
+]
