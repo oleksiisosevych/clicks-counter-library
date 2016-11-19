@@ -3,4 +3,6 @@
     <string name="categories_message">I am interested in:</string>
 
     <string name="cd_category_picture">Category Image</string>
+    <string name="cd_picture">Image</string>
+
 </resources>

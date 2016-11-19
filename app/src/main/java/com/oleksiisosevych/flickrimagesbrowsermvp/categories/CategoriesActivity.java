@@ -11,8 +11,6 @@ import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
 
 public class CategoriesActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

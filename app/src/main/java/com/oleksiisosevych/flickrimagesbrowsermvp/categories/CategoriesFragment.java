@@ -1,5 +1,6 @@
 package com.oleksiisosevych.flickrimagesbrowsermvp.categories;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
+import com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails.CategoryDetailsActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
 
 import java.util.List;
@@ -61,7 +63,7 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
         gridLayout.removeAllViews();
         int index = 1;
         for (final Category category : categoryList) {
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.picture_grid_item, gridLayout, false);
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.categories_grid_item, gridLayout, false);
             ((GridLayout.LayoutParams) view.getLayoutParams()).columnSpec =
                     GridLayout.spec(GridLayout.UNDEFINED, (index++ % 3 > 0) ? 2f : 1f);
 
@@ -85,7 +87,8 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
     }
 
     @Override public void showCategoryDetailsUi(@NonNull Category category) {
-
+        Intent intent = CategoryDetailsActivity.getLaunchIntent(getActivity(), category);
+        startActivity(intent);
     }
 
     @Override public void setPresenter(CategoriesContract.Presenter presenter) {

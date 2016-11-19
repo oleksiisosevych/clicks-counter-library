@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".router.RouterActivity">
         </activity>
+        <activity android:name=".categorydetails.CategoryDetailsActivity">
+        </activity>
     </application>
 
 </manifest>
