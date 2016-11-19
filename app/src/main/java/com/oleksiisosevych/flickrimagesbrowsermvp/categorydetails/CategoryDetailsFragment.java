@@ -1,5 +1,6 @@
 package com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,12 +13,12 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.imagedetails.ImageDetailsActivity;
 
 import java.util.List;
 
 /**
- * Display a grid of {@link Category}s.
+ * Display a grid of images after selecting category.
  */
 public class CategoryDetailsFragment extends Fragment implements CategoryDetailsContract.View {
     private static final int GRID_COLUMNS_COUNT = 3;
@@ -26,8 +27,8 @@ public class CategoryDetailsFragment extends Fragment implements CategoryDetails
     private RecyclerView recyclerView;
 
     public CategoryDetailsFragment() {
+        // Required public constructor
     }
-
 
     public static CategoryDetailsFragment newInstance() {
         return new CategoryDetailsFragment();
@@ -69,7 +70,8 @@ public class CategoryDetailsFragment extends Fragment implements CategoryDetails
     }
 
     @Override public void showPictureDetails(@NonNull String imageUrl) {
-
+        Intent intent = ImageDetailsActivity.getLaunchIntent(getActivity(), imageUrl);
+        startActivity(intent);
     }
 
     private class PicturesAdapter extends RecyclerView.Adapter<PicturesAdapter.PictureViewHolder> {
@@ -87,7 +89,13 @@ public class CategoryDetailsFragment extends Fragment implements CategoryDetails
 
         @Override
         public void onBindViewHolder(PictureViewHolder holder, int position) {
-            Glide.with(getContext()).load(imageUrls.get(position)).into(holder.pic);
+            final String imageUrl = imageUrls.get(position);
+            Glide.with(getContext()).load(imageUrl).into(holder.pic);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    presenter.openPictureDetails(imageUrl);
+                }
+            });
         }
 
 

@@ -8,7 +8,7 @@ import com.oleksiisosevych.flickrimagesbrowsermvp.data.ImagesDataSource;
 import java.util.List;
 
 /**
- * Listens to user actions from the UI ({@link CategorFragment}), retrieves the data and updates the
+ * Listens to user actions from the UI ({@link CategoryDetailsFragment}), retrieves the data and updates the
  * UI as required.
  */
 public class CategoryDetailsPresenter implements CategoryDetailsContract.Presenter {

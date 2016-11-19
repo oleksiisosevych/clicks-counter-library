@@ -17,10 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".router.RouterActivity">
-        </activity>
-        <activity android:name=".categorydetails.CategoryDetailsActivity">
-        </activity>
+        <activity android:name=".router.RouterActivity"/>
+        <activity android:name=".categorydetails.CategoryDetailsActivity"/>
+        <activity android:name=".imagedetails.ImageDetailsActivity"/>
     </application>
 
 </manifest>
