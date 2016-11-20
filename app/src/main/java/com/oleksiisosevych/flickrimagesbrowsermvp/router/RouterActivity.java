@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.categories.CategoriesActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.StatisticsDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.DummyStatisticsDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.StatsLocalDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.EventStat;
 import com.oleksiisosevych.flickrimagesbrowsermvp.welcome.WelcomeActivity;
 
@@ -23,7 +23,7 @@ public class RouterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        statisticsDataSource = DummyStatisticsDataSource.getInstance();
+        statisticsDataSource = StatsLocalDataSource.getInstance(getApplicationContext());
         statisticsDataSource.getAllEventsStats(new StatisticsDataSource.LoadEventStatisticsCallback() {
             @Override public void onStatsLoaded(List<EventStat> stats) {
                 Intent intent;
@@ -37,7 +37,9 @@ public class RouterActivity extends AppCompatActivity {
             }
 
             @Override public void onDataNotAvailable() {
-
+                Intent intent = CategoriesActivity.getLaunchIntent(RouterActivity.this);
+                startActivity(intent);
+                finish();
             }
         });
     }

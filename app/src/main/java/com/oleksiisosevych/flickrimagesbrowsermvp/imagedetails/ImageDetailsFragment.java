@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
@@ -17,8 +16,6 @@ import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 public class ImageDetailsFragment extends Fragment implements ImageDetailsContract.View {
 
     private ImageDetailsContract.Presenter presenter;
-
-    private TextView textView;
 
     private ImageView imageView;
 
@@ -42,7 +39,6 @@ public class ImageDetailsFragment extends Fragment implements ImageDetailsContra
         View view = inflater.inflate(R.layout.fr_image_details, container, false);
 
         // find views
-        textView = (TextView) view.findViewById(R.id.text_view);
         imageView = (ImageView) view.findViewById(R.id.image_view);
 
         return view;

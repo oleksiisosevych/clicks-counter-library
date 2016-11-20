@@ -54,8 +54,7 @@ public class CategoriesPresenter implements CategoriesContract.Presenter {
             }
 
             @Override public void onDataNotAvailable() {
-                // not implemented in current scope
-
+                view.showCategoriesList(categories);
             }
         });
     }
@@ -72,6 +71,7 @@ public class CategoriesPresenter implements CategoriesContract.Presenter {
     }
 
     @Override public void openCategoryDetails(@NonNull Category category) {
+        statisticsDataSource.logEvent(category.getId());
         view.showCategoryDetailsUi(category);
     }
 

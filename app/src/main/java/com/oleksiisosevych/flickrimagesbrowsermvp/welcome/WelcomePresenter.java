@@ -55,8 +55,7 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
             }
 
             @Override public void onDataNotAvailable() {
-                // not implemented in current scope
-
+                throw new IllegalStateException();
             }
         });
     }

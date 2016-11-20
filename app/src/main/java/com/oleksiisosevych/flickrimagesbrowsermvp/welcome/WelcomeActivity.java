@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.CategoriesLocalDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.DummyStatisticsDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.StatsLocalDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -47,7 +47,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         new WelcomePresenter(
                 CategoriesLocalDataSource.getInstance(this),
-                DummyStatisticsDataSource.getInstance(),
+                StatsLocalDataSource.getInstance(getApplicationContext()),
                 welcomeFragment);
     }
 }

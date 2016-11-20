@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
@@ -86,7 +87,7 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
         private boolean allEquals;
 
 
-        public CategoriesAdapter(List<Category> categoryList) {
+        CategoriesAdapter(List<Category> categoryList) {
             categories = categoryList;
             Collections.sort(categories);
             categoriesForRow = new HashMap<>();
@@ -101,19 +102,14 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
 
             allEquals = categories.get(0).getClicksCount() == 0;
             if (!allEquals) {
-                if (categories.size() > 1) {
-                    categoryWeights.put(categories.get(0), 3);
-                    row.add(categories.get(0));
-                    categoriesForRow.put(rowIndex++, row);
-                }
+                categoryWeights.put(categories.get(0), 3);
+                row.add(categories.get(0));
+                categoriesForRow.put(rowIndex++, row);
 
-                if (categories.size() > 2) {
-                    categoryWeights.put(categories.get(1), 2);
-                    row = new ArrayList<>();
-                    row.add(categories.get(1));
-                    weightSum += 2;
-                }
-                allEquals = false;
+                row = new ArrayList<>();
+                row.add(categories.get(1));
+                weightSum += 2;
+                categoryWeights.put(categories.get(1), 2);
             }
 
             for (Category category : categories) {
@@ -150,6 +146,8 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
         private View getViewForCategory(final Category category, ViewGroup parent) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_grid_item, parent, false);
             ImageView categoryImage = (ImageView) view.findViewById(R.id.picture);
+            TextView count = (TextView) view.findViewById(R.id.count);
+            count.setText(String.valueOf(category.getClicksCount()));
             Glide.with(parent.getContext()).load(category.getImageUrl()).into(categoryImage);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
