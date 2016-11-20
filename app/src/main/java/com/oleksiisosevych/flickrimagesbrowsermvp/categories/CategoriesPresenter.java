@@ -3,7 +3,9 @@ package com.oleksiisosevych.flickrimagesbrowsermvp.categories;
 import android.support.annotation.NonNull;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.CategoriesDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.StatisticsDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.EventStat;
 
 import java.util.List;
 
@@ -17,9 +19,15 @@ public class CategoriesPresenter implements CategoriesContract.Presenter {
 
     private CategoriesContract.View view;
 
-    public CategoriesPresenter(@NonNull CategoriesDataSource categiesDataSource,
+    private List<Category> categories;
+
+    private StatisticsDataSource statisticsDataSource;
+
+    public CategoriesPresenter(@NonNull StatisticsDataSource statisticsDataSource,
+                               @NonNull CategoriesDataSource categiesDataSource,
                                @NonNull CategoriesContract.View view) {
         this.categiesDataSource = categiesDataSource;
+        this.statisticsDataSource = statisticsDataSource;
         this.view = view;
         view.setPresenter(this);
     }
@@ -27,7 +35,9 @@ public class CategoriesPresenter implements CategoriesContract.Presenter {
     @Override public void loadCategories() {
         categiesDataSource.getCategories(new CategoriesDataSource.LoadCategoriesCallback() {
             @Override public void onCategoriesLoaded(List<Category> categories) {
-                view.showCategoriesList(categories);
+
+                CategoriesPresenter.this.categories = categories;
+                requestCategoryStats();
             }
 
             @Override public void onDataNotAvailable() {
@@ -35,6 +45,30 @@ public class CategoriesPresenter implements CategoriesContract.Presenter {
                 throw new UnsupportedOperationException();
             }
         });
+    }
+
+    private void requestCategoryStats() {
+        statisticsDataSource.getAllEventsStats(new StatisticsDataSource.LoadEventStatisticsCallback() {
+            @Override public void onStatsLoaded(List<EventStat> stats) {
+                onStatsReceived(stats);
+            }
+
+            @Override public void onDataNotAvailable() {
+                // not implemented in current scope
+
+            }
+        });
+    }
+
+    private void onStatsReceived(List<EventStat> stats) {
+        for (Category category : categories) {
+            for (EventStat stat : stats) {
+                if (category.getId().equals(stat.getEventId())) {
+                    category.setClicksCount(stat.getCount());
+                }
+            }
+        }
+        view.showCategoriesList(categories);
     }
 
     @Override public void openCategoryDetails(@NonNull Category category) {

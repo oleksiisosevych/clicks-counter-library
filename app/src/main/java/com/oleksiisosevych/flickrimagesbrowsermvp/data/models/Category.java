@@ -74,6 +74,6 @@ public final class Category implements Parcelable, Comparable<Category> {
             return this.getId().compareTo(other.getId());
         }
 
-        return ((Integer) this.clicksCount).compareTo(other.clicksCount);
+        return ((Integer) other.clicksCount).compareTo(this.clicksCount);
     }
 }

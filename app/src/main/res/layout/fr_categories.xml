@@ -16,17 +16,8 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/categories_message"/>
 
-    <android.support.v7.widget.GridLayout
-        xmlns:grid="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/category_grid"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-
-        grid:alignmentMode="alignBounds"
-        grid:columnCount="3"
-        grid:rowOrderPreserved="false"
-        grid:useDefaultMargins="true">
-
-    </android.support.v7.widget.GridLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
