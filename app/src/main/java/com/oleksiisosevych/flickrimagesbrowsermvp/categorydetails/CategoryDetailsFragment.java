@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.imagedetails.ImageDetailsActivity;
 
 import java.util.List;
@@ -25,13 +27,17 @@ public class CategoryDetailsFragment extends Fragment implements CategoryDetails
 
     private CategoryDetailsContract.Presenter presenter;
     private RecyclerView recyclerView;
+    private TextView msg;
+    private Category category;
 
     public CategoryDetailsFragment() {
         // Required public constructor
     }
 
-    public static CategoryDetailsFragment newInstance() {
-        return new CategoryDetailsFragment();
+    public static CategoryDetailsFragment newInstance(Category category) {
+        CategoryDetailsFragment fragment = new CategoryDetailsFragment();
+        fragment.category = category;
+        return fragment;
     }
 
     @Override
@@ -45,9 +51,11 @@ public class CategoryDetailsFragment extends Fragment implements CategoryDetails
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fr_category_details, container, false);
 
-        // find views
+        // find views and setup
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), GRID_COLUMNS_COUNT));
+        msg = (TextView) view.findViewById(R.id.category_details_message);
+        msg.setText(getString(R.string.category_details_message, category.getName()));
         return view;
     }
 

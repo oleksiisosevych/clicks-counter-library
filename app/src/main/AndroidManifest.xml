@@ -17,10 +17,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".categories.CategoriesActivity"/>
-        <activity android:name=".categorydetails.CategoryDetailsActivity"/>
-        <activity android:name=".imagedetails.ImageDetailsActivity"/>
-        <activity android:name=".welcome.WelcomeActivity"/>
+        <activity
+            android:name=".categories.CategoriesActivity"
+            android:label="@string/activity_title_categories"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".categorydetails.CategoryDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".imagedetails.ImageDetailsActivity"
+            android:label="@string/activity_title_image_details"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".welcome.WelcomeActivity"
+            android:label="@string/activity_title_welcome"
+            android:screenOrientation="portrait"/>
 
     </application>
 

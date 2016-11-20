@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">FlickrImagesBrowserMVP</string>
     <string name="categories_message">I am interested in:</string>
-    <string name="category_details_message">CHANGE_ME:</string>
+    <string name="category_details_message">Top 12 images from category: %s</string>
 
 
     <string name="cd_category_picture">Category Image</string>
     <string name="cd_picture">Image</string>
+    <string name="activity_title_categories">Categories List</string>
+    <string name="activity_title_welcome">Welcome back</string>
+    <string name="activity_title_image_details">Image Details</string>
+
+
     <string name="see_all_categories">See all categories</string>
+    <string name="welcome_message">Welcome back to our app. Your favorite category:\n%s</string>
 
 
 </resources>

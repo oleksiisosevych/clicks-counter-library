@@ -25,7 +25,7 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
 
     private WelcomeContract.Presenter presenter;
 
-    private TextView categoryTitle;
+    private TextView welcomeMessage;
 
     private ImageView categoryImage;
 
@@ -53,7 +53,7 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
         View view = inflater.inflate(R.layout.fr_welcome, container, false);
 
         // find views
-        categoryTitle = (TextView) view.findViewById(R.id.category_title);
+        welcomeMessage = (TextView) view.findViewById(R.id.welcome_message);
         categoryImage = (ImageView) view.findViewById(R.id.category_image);
         btnAllCategories = (Button) view.findViewById(R.id.btn_to_categories);
         categoryCard = (CardView) view.findViewById(R.id.card_view);
@@ -91,7 +91,7 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
         Glide.with(getActivity())
                 .load(category.getImageUrl())
                 .into(categoryImage);
-        categoryTitle.setText(category.getName());
+        welcomeMessage.setText(getString(R.string.welcome_message, category.getName()));
     }
 
     @Override public void navigateToCategoryDetails(@NonNull Category category) {

@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.oleksiisosevych.flickrimagesbrowsermvp.BaseActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
-public class ImageDetailsActivity extends AppCompatActivity {
+public class ImageDetailsActivity extends BaseActivity {
 
     public static final String IMAGE_URL_EXTRA_KEY = "image_url_key";
 
@@ -24,7 +24,7 @@ public class ImageDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iamge_details);
+        setContentView(R.layout.activity_common);
 
 
         // Set up the toolbar.
