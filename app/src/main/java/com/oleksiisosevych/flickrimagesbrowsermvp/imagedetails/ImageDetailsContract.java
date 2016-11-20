@@ -1,7 +1,7 @@
 package com.oleksiisosevych.flickrimagesbrowsermvp.imagedetails;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.BasePresenter;
-import com.oleksiisosevych.flickrimagesbrowsermvp.BaseView;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BasePresenter;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BaseView;
 
 /**
  * Interface that describes communication between view and presenter in image details screen

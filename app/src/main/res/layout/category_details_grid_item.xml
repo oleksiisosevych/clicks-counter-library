@@ -8,7 +8,7 @@
                                     app:cardUseCompatPadding="true">
 
 
-    <com.oleksiisosevych.flickrimagesbrowsermvp.SquaredImageView
+    <com.oleksiisosevych.flickrimagesbrowsermvp.common.SquaredImageView
         android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

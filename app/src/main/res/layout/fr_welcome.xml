@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.oleksiisosevych.flickrimagesbrowsermvp.SquaredImageView
+            <com.oleksiisosevych.flickrimagesbrowsermvp.common.SquaredImageView
                 android:id="@+id/category_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

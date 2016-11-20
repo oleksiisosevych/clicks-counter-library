@@ -1,5 +1,5 @@
 
-package com.oleksiisosevych.flickrimagesbrowsermvp.data.local;
+package com.oleksiisosevych.mystatisticslibrary;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

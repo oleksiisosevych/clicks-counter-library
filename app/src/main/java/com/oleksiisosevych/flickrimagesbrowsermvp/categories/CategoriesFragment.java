@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.oleksiisosevych.flickrimagesbrowsermvp.BuildConfig;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails.CategoryDetailsActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
@@ -52,7 +53,6 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fr_categories, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-//        gridLayout = (GridLayout) view.findViewById(R.id.category_grid);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return view;
     }
@@ -147,7 +147,11 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_grid_item, parent, false);
             ImageView categoryImage = (ImageView) view.findViewById(R.id.picture);
             TextView count = (TextView) view.findViewById(R.id.count);
-            count.setText(String.valueOf(category.getClicksCount()));
+            if (BuildConfig.DEBUG) {
+                count.setText(String.valueOf(category.getClicksCount()));
+            } else {
+                count.setVisibility(View.GONE);
+            }
             Glide.with(parent.getContext()).load(category.getImageUrl()).into(categoryImage);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {

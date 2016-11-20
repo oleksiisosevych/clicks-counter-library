@@ -1,20 +1,5 @@
-/*
- * Copyright 2016, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-package com.oleksiisosevych.flickrimagesbrowsermvp.data.local;
+package com.oleksiisosevych.mystatisticslibrary;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -22,8 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.StatisticsDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.EventStat;
+import com.oleksiisosevych.mystatisticslibrary.model.EventCount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,25 +16,25 @@ import java.util.List;
 /**
  * Concrete implementation of a data source as a db.
  */
-public class StatsLocalDataSource implements StatisticsDataSource {
+public class EventCounter {
 
-    private static StatsLocalDataSource INSTANCE;
+    private static EventCounter INSTANCE;
 
     private StatsDbHelper dbHelper;
 
     // Prevent direct instantiation.
-    private StatsLocalDataSource(@NonNull Context context) {
+    private EventCounter(@NonNull Context context) {
         dbHelper = new StatsDbHelper(context);
     }
 
-    public static StatsLocalDataSource getInstance(@NonNull Context context) {
+    public static EventCounter getInstance(@NonNull Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new StatsLocalDataSource(context);
+            INSTANCE = new EventCounter(context);
         }
         return INSTANCE;
     }
 
-    @Override public void logEvent(String eventId) {
+    public void logEvent(String eventId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String[] projection = {
@@ -107,9 +91,8 @@ public class StatsLocalDataSource implements StatisticsDataSource {
         db.close();
     }
 
-    @Override
-    public void getAllEventsStats(LoadEventStatisticsCallback callback) {
-        List<EventStat> eventStats = new ArrayList<>();
+    public void getEventsStats(LoadEventStatisticsCallback callback) {
+        List<EventCount> eventStats = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String[] projection = {
@@ -124,7 +107,7 @@ public class StatsLocalDataSource implements StatisticsDataSource {
             while (c.moveToNext()) {
                 String eventId = c.getString(c.getColumnIndexOrThrow(StatsPersistenceContract.StatEntry.COLUMN_NAME_EVENT_ID));
                 int count = c.getInt(c.getColumnIndexOrThrow(StatsPersistenceContract.StatEntry.COLUMN_NAME_COUNT));
-                EventStat eventStat = new EventStat(eventId, count);
+                EventCount eventStat = new EventCount(eventId, count);
                 eventStats.add(eventStat);
             }
         }

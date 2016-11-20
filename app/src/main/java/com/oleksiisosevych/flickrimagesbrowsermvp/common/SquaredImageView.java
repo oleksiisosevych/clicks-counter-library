@@ -1,4 +1,4 @@
-package com.oleksiisosevych.flickrimagesbrowsermvp;
+package com.oleksiisosevych.flickrimagesbrowsermvp.common;
 
 import android.content.Context;
 import android.util.AttributeSet;

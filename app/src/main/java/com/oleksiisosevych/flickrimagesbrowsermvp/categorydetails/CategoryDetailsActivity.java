@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.BaseActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BaseActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.FlickrImagesDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;

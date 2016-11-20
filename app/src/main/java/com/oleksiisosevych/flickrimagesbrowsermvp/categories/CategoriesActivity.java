@@ -7,10 +7,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.BaseActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BaseActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.CategoriesLocalDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.StatsLocalDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.StatsLibraryDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
 
@@ -45,7 +45,7 @@ public class CategoriesActivity extends BaseActivity {
 
         // Create the presenter
         new CategoriesPresenter(
-                StatsLocalDataSource.getInstance(getApplicationContext()),
+                StatsLibraryDataSource.getInstance(getApplicationContext()),
                 CategoriesLocalDataSource.getInstance(getApplicationContext()),
                 categoriesFragment);
     }

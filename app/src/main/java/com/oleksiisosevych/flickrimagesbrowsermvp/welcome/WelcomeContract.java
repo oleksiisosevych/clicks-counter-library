@@ -2,8 +2,8 @@ package com.oleksiisosevych.flickrimagesbrowsermvp.welcome;
 
 import android.support.annotation.NonNull;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.BasePresenter;
-import com.oleksiisosevych.flickrimagesbrowsermvp.BaseView;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BasePresenter;
+import com.oleksiisosevych.flickrimagesbrowsermvp.common.BaseView;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 /**

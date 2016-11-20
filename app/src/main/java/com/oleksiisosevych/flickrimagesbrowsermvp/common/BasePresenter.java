@@ -1,4 +1,4 @@
-package com.oleksiisosevych.flickrimagesbrowsermvp;
+package com.oleksiisosevych.flickrimagesbrowsermvp.common;
 
 /**
  * Base class for all presenter interfaces

@@ -1,4 +1,4 @@
-package com.oleksiisosevych.flickrimagesbrowsermvp;
+package com.oleksiisosevych.flickrimagesbrowsermvp.common;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
