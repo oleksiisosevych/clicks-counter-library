@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/categories_message"/>
+        android:text="@string/categories_message"
+        android:textSize="20sp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
