@@ -20,6 +20,11 @@ public final class Category implements Parcelable, Comparable<Category> {
     private String imageUrl;
     private int clicksCount;
 
+
+    public Category(String id) {
+        this.id = id;
+    }
+
     public Category() {
     }
 
