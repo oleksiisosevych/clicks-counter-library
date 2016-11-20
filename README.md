@@ -4,21 +4,21 @@ Android app that leverages the [Flickr API](https://www.flickr.com/services/api/
 
 The app is composed of 4 screens. Welcome screen is shown to user in case user already used the app and selected some category at least once, on the welcome screen the most popular (or the one with smaller id in case of tie) category. It is possible to navigate to most used Category images screen or to Category list screen from here. Category list screen displays a grid of hardcoded image categories. After a user selects a catogory from the list, a Category Details screen appears displaying 12 first search results from Flickr. When user taps on image it is presented in the Image Details screen with big selected image.
 
-**Welcome**
+**Welcome Screen**
 
-![Imgur](http://imgur.com/rQgjbMw)
+![Imgur](https://s14.postimg.org/cdtsaonsx/Screen_Shot_2016_11_21_at_00_28_20.png)
 
-**Categories List**
+**Categories List Screen**
 
-![Imgur](http://imgur.com/rQgjbMw)
+![Imgur](https://s14.postimg.org/q8wo6w7lt/Screen_Shot_2016_11_21_at_00_28_29.png)
 
-**Category Details**
+**Category Details Screen**
 
-![Imgur](http://imgur.com/kqkr1Op)
+![Imgur](https://s14.postimg.org/ysg24nfy9/Screen_Shot_2016_11_21_at_00_28_39.png)
 
-**Image Details**
+**Image Details Screen**
 
-![Imgur](http://imgur.com/YPgansV)
+![Imgur](https://s14.postimg.org/nhdega935/Screen_Shot_2016_11_21_at_00_28_46.png)
 
 ## Overview
 
