@@ -6,19 +6,19 @@ The app is composed of 4 screens. Welcome screen is shown to user in case user a
 
 **Welcome Screen**
 
-![Imgur](https://s14.postimg.org/cdtsaonsx/Screen_Shot_2016_11_21_at_00_28_20.png)
+<img src="https://s13.postimg.org/drg8gx1sn/Screen_Shot_2016_11_21_at_00_53_33.png" height="350">
 
 **Categories List Screen**
 
-![Imgur](https://s14.postimg.org/q8wo6w7lt/Screen_Shot_2016_11_21_at_00_28_29.png)
+<img src="https://s13.postimg.org/aw35a1xsn/Screen_Shot_2016_11_21_at_00_53_13.png" height="350">
 
 **Category Details Screen**
 
-![Imgur](https://s14.postimg.org/ysg24nfy9/Screen_Shot_2016_11_21_at_00_28_39.png)
+<img src="https://s14.postimg.org/ysg24nfy9/Screen_Shot_2016_11_21_at_00_28_39.png" height="350">
 
 **Image Details Screen**
 
-![Imgur](https://s14.postimg.org/nhdega935/Screen_Shot_2016_11_21_at_00_28_46.png)
+<img src="https://s14.postimg.org/nhdega935/Screen_Shot_2016_11_21_at_00_28_46.png" height="350">
 
 ## Overview
 
