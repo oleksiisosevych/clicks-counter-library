@@ -6,5 +6,7 @@
 
     <string name="cd_category_picture">Category Image</string>
     <string name="cd_picture">Image</string>
+    <string name="see_all_categories">See all categories</string>
+
 
 </resources>

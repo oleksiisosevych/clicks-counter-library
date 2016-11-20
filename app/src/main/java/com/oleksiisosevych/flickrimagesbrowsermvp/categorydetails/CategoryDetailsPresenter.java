@@ -35,7 +35,7 @@ public class CategoryDetailsPresenter implements CategoryDetailsContract.Present
     @Override public void loadPictures() {
         imagesDataSource.getImages(category.getName(), new ImagesDataSource.LoadImagesCallback() {
             @Override public void onImagesLoaded(List<String> imagesUrls) {
-                view.showPictures(imagesUrls);
+                view.showPictures(imagesUrls.subList(0, Math.min(12, imagesUrls.size())));
             }
 
             @Override public void onDataNotAvailable() {

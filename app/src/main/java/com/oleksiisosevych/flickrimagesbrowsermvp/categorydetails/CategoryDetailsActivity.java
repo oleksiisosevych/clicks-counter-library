@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.ImagesStubDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.FlickrImagesDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
@@ -51,7 +51,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         // Create the presenter
         Category category = getIntent().getParcelableExtra(CATEGORY_EXTRA_KEY);
         new CategoryDetailsPresenter(
-                ImagesStubDataSource.getInstance(),
+                FlickrImagesDataSource.getInstance(),
                 categoryDetailsFragment,
                 category);
     }

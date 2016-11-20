@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RouterActivity extends AppCompatActivity {
 
-    StatisticsDataSource statisticsDataSource;
+    private StatisticsDataSource statisticsDataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,9 +25,13 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
 
     private WelcomeContract.Presenter presenter;
 
-    private TextView textView;
+    private TextView categoryTitle;
 
-    private ImageView imageView;
+    private ImageView categoryImage;
+
+    private CardView categoryCard;
+
+    private Button btnAllCategories;
 
     public WelcomeFragment() {
         // Required public constructor
@@ -44,11 +50,25 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fr_image_details, container, false);
+        View view = inflater.inflate(R.layout.fr_welcome, container, false);
 
         // find views
-        textView = (TextView) view.findViewById(R.id.text_view);
-        imageView = (ImageView) view.findViewById(R.id.image_view);
+        categoryTitle = (TextView) view.findViewById(R.id.category_title);
+        categoryImage = (ImageView) view.findViewById(R.id.category_image);
+        btnAllCategories = (Button) view.findViewById(R.id.btn_to_categories);
+        categoryCard = (CardView) view.findViewById(R.id.card_view);
+
+        btnAllCategories.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                presenter.openCategoryList();
+            }
+        });
+
+        categoryCard.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                presenter.openCategory();
+            }
+        });
 
         return view;
     }
@@ -70,7 +90,8 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
     @Override public void showHottestCategory(@NonNull Category category) {
         Glide.with(getActivity())
                 .load(category.getImageUrl())
-                .into(imageView);
+                .into(categoryImage);
+        categoryTitle.setText(category.getName());
     }
 
     @Override public void navigateToCategoryDetails(@NonNull Category category) {
