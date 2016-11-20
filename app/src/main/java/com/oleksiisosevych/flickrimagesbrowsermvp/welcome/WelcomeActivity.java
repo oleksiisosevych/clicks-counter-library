@@ -1,4 +1,4 @@
-package com.oleksiisosevych.flickrimagesbrowsermvp.categories;
+package com.oleksiisosevych.flickrimagesbrowsermvp.welcome;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,18 +10,21 @@ import android.support.v7.widget.Toolbar;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.CategoriesLocalDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.DummyStatisticsDataSource;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
-
-public class CategoriesActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     public static Intent getLaunchIntent(@NonNull Context from) {
-        return new Intent(from, CategoriesActivity.class);
+        Intent intent = new Intent(from, WelcomeActivity.class);
+        return intent;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories);
+        setContentView(R.layout.activity_iamge_details);
+
 
         // Set up the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -32,19 +35,19 @@ public class CategoriesActivity extends AppCompatActivity {
 
         // Get the requested task id
 
-        CategoriesFragment categoriesFragment = (CategoriesFragment) getSupportFragmentManager()
+        WelcomeFragment welcomeFragment = (WelcomeFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.contentFrame);
 
-        if (categoriesFragment == null) {
-            categoriesFragment = CategoriesFragment.newInstance();
+        if (welcomeFragment == null) {
+            welcomeFragment = WelcomeFragment.newInstance();
 
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
-                    categoriesFragment, R.id.contentFrame);
+                    welcomeFragment, R.id.contentFrame);
         }
 
-        // Create the presenter
-        new CategoriesPresenter(
-                CategoriesLocalDataSource.getInstance(getApplicationContext()),
-                categoriesFragment);
+        new WelcomePresenter(
+                CategoriesLocalDataSource.getInstance(this),
+                DummyStatisticsDataSource.getInstance(),
+                welcomeFragment);
     }
 }

@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.BasePresenter;
 import com.oleksiisosevych.flickrimagesbrowsermvp.BaseView;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 import java.util.List;
 

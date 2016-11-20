@@ -14,12 +14,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails.CategoryDetailsActivity;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 import java.util.List;
 
 /**
- * Display a grid of {@link com.oleksiisosevych.flickrimagesbrowsermvp.data.Category}s.
+ * Display a grid of {@link Category}s.
  */
 public class CategoriesFragment extends Fragment implements CategoriesContract.View {
 

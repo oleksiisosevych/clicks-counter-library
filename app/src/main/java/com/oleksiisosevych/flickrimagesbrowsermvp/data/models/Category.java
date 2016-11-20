@@ -1,10 +1,10 @@
-package com.oleksiisosevych.flickrimagesbrowsermvp.data;
+package com.oleksiisosevych.flickrimagesbrowsermvp.data.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-public final class Category implements Parcelable {
+public final class Category implements Parcelable, Comparable<Category> {
 
     public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
         @Override public Category createFromParcel(Parcel source) {
@@ -67,5 +67,13 @@ public final class Category implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.imageUrl);
         dest.writeInt(this.clicksCount);
+    }
+
+    @Override public int compareTo(Category other) {
+        if (other.getClicksCount() == this.getClicksCount()) {
+            return this.getId().compareTo(other.getId());
+        }
+
+        return ((Integer) this.clicksCount).compareTo(other.clicksCount);
     }
 }

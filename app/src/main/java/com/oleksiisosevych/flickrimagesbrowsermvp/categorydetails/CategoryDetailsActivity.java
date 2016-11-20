@@ -9,8 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.local.ImagesStubDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
 public class CategoryDetailsActivity extends AppCompatActivity {

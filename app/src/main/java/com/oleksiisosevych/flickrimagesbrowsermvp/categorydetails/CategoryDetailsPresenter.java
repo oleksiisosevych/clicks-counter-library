@@ -2,8 +2,8 @@ package com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails;
 
 import android.support.annotation.NonNull;
 
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.ImagesDataSource;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 import java.util.List;
 

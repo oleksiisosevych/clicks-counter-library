@@ -3,7 +3,7 @@ package com.oleksiisosevych.flickrimagesbrowsermvp.categories;
 import android.support.annotation.NonNull;
 
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.CategoriesDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 import java.util.List;
 

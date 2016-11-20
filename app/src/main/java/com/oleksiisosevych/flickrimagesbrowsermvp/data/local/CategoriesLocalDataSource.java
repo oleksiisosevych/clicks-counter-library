@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.CategoriesDataSource;
-import com.oleksiisosevych.flickrimagesbrowsermvp.data.Category;
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
 
 import java.io.IOException;
 import java.io.InputStream;

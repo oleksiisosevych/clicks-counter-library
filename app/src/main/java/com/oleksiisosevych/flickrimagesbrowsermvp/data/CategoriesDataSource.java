@@ -2,6 +2,8 @@ package com.oleksiisosevych.flickrimagesbrowsermvp.data;
 
 import android.support.annotation.NonNull;
 
+import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
+
 import java.util.List;
 
 /**
