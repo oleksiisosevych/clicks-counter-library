@@ -41,7 +41,7 @@ The app does following:
 
 **Image Details Screen**
 
-<img src="https://s14.postimg.org/nhdega935/Screen_Shot_2016_11_21_at_00_28_46.png" height="350">
+<img src="https://s13.postimg.org/nejk49blj/Screenshot_1480275406.png" height="350">
 
 * Display big image after selecting it from Category Details Screen
 
