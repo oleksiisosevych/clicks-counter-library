@@ -100,7 +100,7 @@ public class WelcomeFragment extends Fragment implements WelcomeContract.View {
     }
 
     @Override public void navigateToCategoryList() {
-        Intent intent = CategoriesActivity.getLaunchIntent(getActivity());
+        Intent intent = CategoriesActivity.getLaunchIntent(getActivity(), true);
         startActivity(intent);
     }
 }

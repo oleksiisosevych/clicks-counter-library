@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.oleksiisosevych.flickrimagesbrowsermvp.BuildConfig;
 import com.oleksiisosevych.flickrimagesbrowsermvp.R;
 import com.oleksiisosevych.flickrimagesbrowsermvp.categorydetails.CategoryDetailsActivity;
 import com.oleksiisosevych.flickrimagesbrowsermvp.data.models.Category;
@@ -29,9 +28,9 @@ import java.util.Map;
  * Display a grid of {@link Category}s.
  */
 public class CategoriesFragment extends Fragment implements CategoriesContract.View {
-
+    private static final boolean SHOW_CLICKS_COUNT = false;
     private CategoriesContract.Presenter presenter;
-    //    private GridLayout gridLayout;
+
     private RecyclerView recyclerView;
 
     public CategoriesFragment() {
@@ -54,6 +53,8 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
         View view = inflater.inflate(R.layout.fr_categories, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
         return view;
     }
 
@@ -147,7 +148,7 @@ public class CategoriesFragment extends Fragment implements CategoriesContract.V
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_grid_item, parent, false);
             ImageView categoryImage = (ImageView) view.findViewById(R.id.picture);
             TextView count = (TextView) view.findViewById(R.id.count);
-            if (BuildConfig.DEBUG) {
+            if (SHOW_CLICKS_COUNT) {
                 count.setText(String.valueOf(category.getClicksCount()));
             } else {
                 count.setVisibility(View.GONE);

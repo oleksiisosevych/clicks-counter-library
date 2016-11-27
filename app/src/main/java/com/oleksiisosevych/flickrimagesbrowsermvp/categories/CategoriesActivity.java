@@ -16,20 +16,28 @@ import com.oleksiisosevych.flickrimagesbrowsermvp.util.ActivityUtils;
 
 public class CategoriesActivity extends BaseActivity {
 
-    public static Intent getLaunchIntent(@NonNull Context from) {
-        return new Intent(from, CategoriesActivity.class);
+
+    public static final String BACK_NAVIGATION_KEY = "back_navigation_key";
+
+    public static Intent getLaunchIntent(@NonNull Context from, boolean enableBackNavigation) {
+        Intent intent = new Intent(from, CategoriesActivity.class);
+        intent.putExtra(BACK_NAVIGATION_KEY, enableBackNavigation);
+        return intent;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common);
 
+        boolean enableBackNavigation = getIntent().getBooleanExtra(BACK_NAVIGATION_KEY, false);
+
         // Set up the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
-        ab.setDisplayShowHomeEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(enableBackNavigation);
+        ab.setDisplayShowHomeEnabled(enableBackNavigation);
 
         // Get the requested task id
 

@@ -30,14 +30,14 @@ public class RouterActivity extends AppCompatActivity {
                 if (stats != null && stats.size() > 0) {
                     intent = WelcomeActivity.getLaunchIntent(RouterActivity.this);
                 } else {
-                    intent = CategoriesActivity.getLaunchIntent(RouterActivity.this);
+                    intent = CategoriesActivity.getLaunchIntent(RouterActivity.this, false);
                 }
                 startActivity(intent);
                 finish();
             }
 
             @Override public void onDataNotAvailable() {
-                Intent intent = CategoriesActivity.getLaunchIntent(RouterActivity.this);
+                Intent intent = CategoriesActivity.getLaunchIntent(RouterActivity.this, false);
                 startActivity(intent);
                 finish();
             }
